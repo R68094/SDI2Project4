@@ -12,14 +12,13 @@ var urlReturn;
 var myUrl = "https://gmail.com";
 var numberString = "239";
 var stringToNumber;
-var myArray = [1,2,3,4,5,6,7,8,9,10];
-var arrayFunction;
-var arrayFunctionCall;
-var lowerCaseString = "i wish i could fly!";
-var upperCaseFunction;
 var roundFunction;
 var myDecimal = 10.4567889;
 var fixedDecimal = 2;
+var dateFunction;
+var measured;
+var myDay = new Date(1994, 6, 20);
+var myBirth = new Date(1992, 2, 11);
 
 // String Phone Confirm
 var phoneReturn = function(phoneNumber) {
@@ -113,66 +112,18 @@ roundFunctionCall = roundFunction(myDecimal,fixedDecimal);
 console.log(roundFunctionCall);
 
 
+// Difference Between Dates
+
+ var dateFunction = function(currentDate,myBDay,days){
+        var firstDate = currentDate;
+        var secondDate = myBDay;
+        var millSeconds = firstDate - secondDate;
+        var diffDays = (millSeconds / 86400000);
+        return diffDays;
+          
+ }
+
+var callDateFunction = dateFunction(myDay, myBirth, measured);
 
 
-
-
-
-
-
-
-
-// Uppercase String
-
-
-var upperCaseFunction = function(stringUsed){
-    var newString = stringUsed.toUpperCase();
-    console.log(newString);
-    if (newString === "I Wish I Could Fly!") {
-        console.log("Uppercasing!")
-    }
-    else
-    console.log("Not doing what i'm suppose to!")
-    
-   return newString;
-}
-console.log(upperCaseFunction);
-
-var callUpperCaseFunction = upperCaseFunction(lowerCaseString);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Greatest Value Array
-var arrayFunction = function(value, index, array){
-    var arrayReturn = false;
-    if (value > 3) {
-        arrayReturn = true;
-    }
-    return arrayReturn;
-    
-    if (myArray.some(arrayFunction)) {
-        var arrayResult = myArray.filter(arrayFunction);
-        alert("these are greater then 3: " + arrayResult);
-    }
-};
-    
-
-var arrayFunctionCall = arrayFunction(value1, index , myArray);
-
-
-
+console.log(callDateFunction);
